@@ -41,10 +41,12 @@ const fallbackCopyTextToClipboard = (text: string) => {
 const Usage = () => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
   const [fontSize, setFontSize] = useState<string>('14px');
+  const [canOverflow, setCanOverflow] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
       setFontSize(window.innerWidth >= 760 ? '16px' : '12px');
+      setCanOverflow(window.innerWidth >= 760? false : true)
     };
 
     handleResize(); // Set initial font size
@@ -73,11 +75,8 @@ const Usage = () => {
             </header>
             <main>
               <SyntaxHighlighter
-                lineProps={{ style: { wordBreak: 'break-word', textAlign: 'left' } }}
-                wrapLines={true}
                 showLineNumbers={true}
                 lineNumberStyle={{textAlign: 'left'}}
-                wrapLongLines
                 language="jsx"
                 customStyle={{
                   width: '100%',
@@ -85,7 +84,7 @@ const Usage = () => {
                   padding: '1em',
                   scrollbarWidth: 'none',
                   borderRadius: '10px',
-                  overflow: 'auto',
+                  overflowX: `${canOverflow === true ? 'scroll' : 'hidden'}`,
                   fontSize
                 }}
                 style={a11yDark}>
