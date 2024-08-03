@@ -44,7 +44,7 @@ const Usage = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setFontSize(window.innerWidth >= 760 ? '14px' : '12px');
+      setFontSize(window.innerWidth >= 760 ? '16px' : '12px');
     };
 
     handleResize(); // Set initial font size

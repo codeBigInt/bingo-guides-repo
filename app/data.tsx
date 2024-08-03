@@ -3,10 +3,10 @@ export const componentUse = [
         title: 'Custom Button',
         content: `jsx
         //import CustomButton from componets folder
-        <CustomButton>
+        <CustomButton variant='primary'>
             Click me!
         </CustomButton>
-        // Additional styles or props like the type, variant, size, icon, isLoading, isLeftIconVisible, isRightIconVisible can be passed
+        //Variant prop can be passed to give different styles to the button
         `,
     },
     {

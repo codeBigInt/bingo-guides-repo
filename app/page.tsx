@@ -5,7 +5,6 @@ import ChatInput from "@/components/guides/chatbox";
 import { ChevronDownCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "./PageComponents/Navbar";
 import GettingStarted from "@/components/guides/getting-started";
-import useNavState from "./custom-hook/nav-state";
 import { useState } from "react";
 import Usage from "./PageComponents/Usage";
 
@@ -20,7 +19,6 @@ const DocHeader = ({ title }: { title: string }) => {
 }
 
 export default function Home() {
-  // const { isOpen } = useNavState()
   const [isOpen, setIsOpen] = useState(false)
   const toggleNav = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()

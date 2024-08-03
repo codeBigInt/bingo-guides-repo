@@ -1,12 +1,33 @@
 
-import { Link,Plus } from "lucide-react";
+import { Link, Plus } from "lucide-react";
 import CustomButton from "./custombutton";
+import SignUpNavbar from "@/app/PageComponents/navbars/custom-navbars/signUpNavbar";
+import LandingPageNavbar from "@/app/PageComponents/navbars/custom-navbars/LandingPageNavbar";
+import GameCustomizeNavBar from "@/app/PageComponents/navbars/custom-navbars/GameCustomizeNavBar";
+import JoinGameNavbar from "@/app/PageComponents/navbars/custom-navbars/JoinGameNavbar";
+import ForgotPasswordNavbar from "@/app/PageComponents/navbars/custom-navbars/ForgotPasswordNavbar";
+import AlphabethGameScreenNavbar from "@/app/PageComponents/navbars/custom-navbars/AlphabethGameScreenNavbar";
 
 export default function SampleButtons() {
+  //create the following functions 
+  //onLogin, onSignup, handleHowToPlayClick, handleShowMenu
+  const onLogin = () => {
+    console.log("Login function called");
+  }
+  const onSignup = () => {
+    console.log("Login function called");
+  }
+  const handleHowToPlayClick = () => {
+    console.log("Login function called");
+  }
+  const handleShowMenu = () => {
+    console.log("Login function called");
+  }
+
   return (
-   <>
+    <>
       <h1 className="text-2xl !text-left font-bold mt-8 mb-4"> Buttons </h1>
- 
+
       <div
         className="grid w-full grid-cols-5 items-start gap-4"
         style={{ gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))" }}
@@ -53,7 +74,7 @@ export default function SampleButtons() {
 
         <div className="group flex h-full flex-col items-start justify-between rounded-lg border px-5 py-5">
           <h2 className="mb-3 text-2xl font-semibold">
-           Yellow Icon Button
+            Yellow Icon Button
           </h2>
           <div className="flex items-center gap-4">
             <CustomButton variant='subtle' isLeftIconVisible={true} icon={<Link />}>
@@ -61,10 +82,10 @@ export default function SampleButtons() {
             </CustomButton>
           </div>
         </div>
-        
+
         <div className="group flex h-full flex-col items-start justify-between rounded-lg border px-5 py-5">
           <h2 className="mb-3 text-2xl font-semibold">
-         Right Icon Button
+            Right Icon Button
           </h2>
           <div className="flex items-center gap-4">
             <CustomButton variant='subtle' isRightIconVisible={true} icon={<Link />}>
@@ -89,6 +110,28 @@ export default function SampleButtons() {
           </div>
         </div>
       </div>
-     </>
+      <h1 className="text-2xl !text-left font-bold mt-8 mb-4">Navbars</h1>
+      <p>All custom navbars have been made available in the components folder inside the app/components/navbars/custom-navbars directory</p>
+      <div>
+        <h2>SignUp Navbar</h2>
+        <div>
+          <SignUpNavbar
+            onLogin={onLogin}
+            handleHowToPlayClick={handleHowToPlayClick}
+            handleShowMenu={handleShowMenu} />
+        </div>
+      </div>
+      <div>
+        <h2>LandingPageNavBar Navbar</h2>
+        <div>
+          <LandingPageNavbar
+            onLogin={onLogin}
+            onSignup={onSignup}
+            handleHowToPlayClick={handleHowToPlayClick}
+            handleShowMenu={handleShowMenu} />
+        </div>
+      </div>
+      <p>Four other custom navbars can be found in same folder plus a default navcard which takes in children props. Hover on them after importing them to see the props they require</p>
+    </>
   );
 }

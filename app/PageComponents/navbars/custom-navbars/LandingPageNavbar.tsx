@@ -3,6 +3,7 @@ import Image from 'next/image'
 import logo from '../asset/bingo_logo.png'
 import user from '../asset/user.png'
 import Navbar from '../Navbar'
+import CustomButton from '@/components/guides/buttons/custombutton'
 import { Menu } from 'lucide-react'
 
 type PageProps = {
@@ -24,13 +25,13 @@ const LandingPageNavbar = ({onLogin, onSignup, handleHowToPlayClick, handleShowM
             <div className='md:flex hidden gap-6 items-center'>
                 <p onClick={handleHowToPlayClick} className='text-textColor-main cursor-pointer hidden md:flex'>How to play</p>
                 <div className='flex gap-4 items-center'>
-                    <button onClick={() => onLogin()} className='bg-[#FAD02C] shadow-custom-inset text-white py-2 px-4 rounded-[8px]'>Login</button>
-                    <button onClick={() => onSignup()} className='bg-[#00658B] shadow-custom-inset text-white py-2 px-4 rounded-[8px]'>Signup</button>
+                    <CustomButton onClick={() => onLogin()} className='bg-[#FAD02C] shadow-custom-inset text-white py-2 px-4 rounded-[8px]'>Login</CustomButton>
+                    <CustomButton variant='secondary' onClick={() => onSignup()} className='bg-[#00658B] shadow-custom-inset text-white py-2 px-4 rounded-[8px]'>Signup</CustomButton>
                 </div>
             </div>
-            <button onClick={() => handleShowMenu()} className='flex md:hidden items-center bg-button-dark-blue shadow-custom-inset border rounded-[8px] gap-[.5em] text-white justify-center py-[10px] px-4 outline-1'>
+            <CustomButton onClick={() => handleShowMenu()} className='flex md:hidden bg-primary-700 items-center border rounded-[8px] gap-[.5em] text-white justify-center py-4 px-4 outline-1'>
                 <Menu />
-            </button>
+            </CustomButton>
         </Navbar>
     )
 }
